@@ -1,0 +1,47 @@
+.accordion-section {
+  width: 60%;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  background-color: turquoise;
+  padding: 10px 5px;
+}
+
+.accordion-title:hover {
+  background-color: #ff0000;
+  transition: background-color ease-in 0.25s;
+}
+
+.accordion-title.active {
+  background-color: green;
+  transition: background-color ease-in 0.25s;
+}
+
+.accordion-title .title {
+  flex-grow: 2;
+  color: white;
+}
+
+.accordion-title .icon {
+  font-weight: 600;
+  color: white;
+}
+
+.accordion-content {
+  overflow: hidden;
+  background-color: azure;
+  transition: all ease-in 0.3s;
+}
+
+.accordion-content.active {
+  padding: 20px;
+}
