@@ -1,0 +1,33 @@
+name: CI work
+
+#Events
+on: push
+
+# List of jobs
+
+jobs:
+  test:
+  # runner
+
+  runs-on: ubuntu-latest
+
+  strategy:
+    matrix:
+      node-version: [14.x]
+
+#Job steps
+
+steps:
+  - name: Checkout repository
+    uses: action/checkout@v2
+
+  - name: Set up Node.js ${{ matrix.node-version }}
+    uses: actions/setup-node@v1
+    with:
+      node-version: ${{matrix.node.version}}
+
+  - name: Install dependencies
+    run: npm install
+
+  - name: Run the tests
+    run: npm test
